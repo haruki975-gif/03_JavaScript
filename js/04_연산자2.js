@@ -1,3 +1,23 @@
+/* 
+    [템플릿 문자열]
+    - `(백틱)을 이용하여 문자열 + 변수/값 혼합 작성을
+      쉽게 할 수 있게 해주는 방법
+    
+    - 문자열 전체를 ``(백틱)으로 감싸고
+      변수/값이 들어가야되는 부분에는 ${변수명/값} 형태로 작성
+
+    ex)
+    const num = 10;
+
+    console.log(`num에 저장된 값은 ${num} 입니다`);
+
+    // 출력 : num에 저장된 값은 10 입니다
+*/
+
+
+
+
+
 /** 비교 연산자 확인 */
 function check1(){
     const num1 = 100; // number type
@@ -52,5 +72,87 @@ function oddEvenCheck(){
     // 홀수 == 2의 배수-1 == 2로 나눴을 때 나머지가 0인 수
     console.log("짝수 맞음? " + (val % 2 === 0) );
     console.log("홀수 맞음? " + (val % 2 === 1) );
+    
+}
+
+
+/** 배수 판별기 */
+function multipleCheck(){
+
+    // 배수 판별기에 사용되는 요소를 모두 얻어와 변수에 저장
+    const input2 = document.getElementById("input2");
+    const input3 = document.getElementById("input3");
+    const result2 = document.getElementById("result2");
+
+    /* 입력 받은 값을 Number 타입으로 변환 */
+    const v1 = Number(input2.value);
+    const v2 = Number(input3.value);
+
+    // #result2 요소의 내용으로 결과 대입(출력)
+    result2.innerText = (v1 % v2 === 0);
+    
+}
+
+
+/** 복합 대입 연산 확인 */
+function compoundCheck(){
+    let num = 100;
+    
+    // num = num - 20;
+    console.log(`num 초기값 : ${num}`); // 100
+
+    num += 20; // num = num + 20;
+    console.log(`num += 20 : ${num}`); // 120
+
+    num -= 60; // num = num - 60;
+    console.log(`num -= 60 : ${num}`); // 60
+    
+    num *= 3; // num = num * 3;
+    console.log(`num *= 3 : ${num}`); // 180
+
+    num /=10; // num = num /10
+    console.log(`num /= 10 : ${num}`); //18
+    
+    num %= 5; // num = num % 6;
+    console.log(`num %= 5 : ${num}`); //3
+    
+}
+
+
+/* AND 연산자 확인  */
+function andCheck(){
+    // 104는 100 이상의 숫자이면서 짝수인가?
+    const bool1 = (104 >= 100) && (104 % 2 ===0); // true
+    console.log(`104는 100 이상의 숫자이면서 짝수인가? ${bool1}`);
+
+    // 50은 70 이하의 숫자이고, 4의 배수가 맞는가?
+    const bool2 = (50 <= 70) && (50 % 4 ===0); // false
+    console.log(`50은 70 이하의 숫자이고, 4의 배수가 맞는가? ${bool2}`);
+
+    // 13은 1부터 10 사이의 숫자가 맞는가?
+    const bool3 = (13 >= 1) && (13 <= 10); // false
+    console.log(`13은 1부터 10 사이의 숫자가 맞는가? ${bool3}`);
+    
+}
+
+
+/* OR 연산자 확인 */
+function orCheck(){
+    // 4는 10을 초과하거나 짝수인가?
+    const bo1 = (4 > 10) || (4 % 2 === 0); // true
+    console.log(`결과 1 : ${bo1}`);
+
+    // 나이가 18세 미만이거나, 이름이 "홍길동"인가?
+    const age = 20;
+    const name = "홍길동";
+    const bo2 = (age < 18) || (name === "홍길동"); // true
+    console.log(`결과 2 : ${bo2}`);
+
+    // 국어 또는 영어 점수가 40점 미만이거나
+    // 평균이 60점 미만인가?
+    const kor = 50;
+    const eng = 75;
+    const bo3 = ((kor < 40) || (eng < 40)) || (((kor+eng)/2) < 60); // false
+    console.log(`결과 3 : ${bo3}`);
     
 }
