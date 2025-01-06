@@ -156,16 +156,54 @@ function check10(){
     const b = Number(document.getElementById("end10").value);
     const c = Number(document.getElementById("multiple10").value);
 
-    let sum = 0;
-    let result = "";
+    let result = ""; // 배수를 한 줄로 출력할 변수
+    let sum = 0; // 합계를 저장할 변수
 
+    // start부터 end까지 1씩 증가하는 num이
+    // multiple로 나눴을 때 나머지가 0인 경우
+    // == num이 multiple의 배수인 경우
     for(num = a; num <= b; num ++){
         if (num % c === 0) {
-            sum += num;
-            result += num + " ";
-            
+            result += num + " "; // 출력 문자열 누적
+            sum += num; // 합계 누적
         }
     }
     console.log(result);
     console.log("합계 : ", sum);
+}
+
+/** 구구단 2단 출력하기 */
+function check11(){
+    // - 2단에 곱해지는 수가 1~9까지 1씩 증가
+    // - 곱셈 결과가 1~9까지 1씩 증가한 수에 2를 곱한 값
+    for(let num = 1; num < 10; num++){
+        console.log(`2 x ${num} = ${num * 2}`);
+    }
+}
+
+/** 입력 받은 단의 구구단 출력하기 */
+/* 
+    - 단이 입력되지 않으면
+        -> alert("단을 입력해 주세요."); -> 출력 후 함수 종료
+    
+    - 입력된 단이 2~9단이 아니면
+        -> alert("2~9단 사이로만 입력해 주세요."); -> 출력 후 함수 종료
+*/
+function check12(){
+    const dan = document.getElementById("dan12");
+    const val = Number(dan.value);
+
+    if(dan.value.length === 0){
+        alert("단을 입력해 주세요.");
+        return;
+    }
+
+    if(val < 2 || val > 9){
+        alert("2~9단 사이로만 입력해 주세요.");
+        return;
+    }
+    
+    for(let num = 1; num < 10; num++){
+        console.log(`${val} x ${num} = ${num * val}`);
+    }
 }
