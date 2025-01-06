@@ -202,8 +202,65 @@ function check12(){
         alert("2~9단 사이로만 입력해 주세요.");
         return;
     }
-    
+
     for(let num = 1; num < 10; num++){
         console.log(`${val} x ${num} = ${num * val}`);
     }
+}
+
+/** 10부터 1까지 1씩 감소하며 출력하기 */
+function check13(){
+/*
+    for([1]초기식; [2]조건식; [4]증감식){
+        // [3]조건식 true일 때 수행할 코드
+        // 2,3,4 반복
+    }
+*/
+    // 감소 형태 반복문은 조건식을 조금 더 생각해야 한다.
+    for(let num = 10; num > 0; num--){
+        console.log(num);
+    }
+}
+
+/** 20부터 3까지 3씩 감소하며 출력하기 */
+function check14(){
+    for(let num = 20; num > 2; num -= 3){
+        console.log(num);
+    }
+}
+
+/** 구구단 3단 거꾸로 출력하기 */
+function check15(){
+    // 9부터 1까지 1씩 감소
+    for(let num = 9; num > 0; num--){
+        console.log(`3 x ${num} = ${3 * num}`);
+    }
+}
+
+/** 5의 배수마다 @, 10의 배수마다 줄바꿈하면서 출력하기(1~30) */
+    /* 
+    [결과 화면]
+    1 2 3 4 @ 6 7 8 9 @
+    11 12 13 14 @ 16 17 18 19 @
+    21 22 23 24 @ 26 27 28 29 @
+*/
+function check16(){
+    let result = "";
+
+    for(let num = 1; num < 31; num++){
+        if(num % 5 === 0){ // 5의 배수인 경우
+            result += "@ ";
+        } else{ // 5의 배수가 아닌 경우
+            result += num + " ";
+        }
+
+        // 10의 배수마다 줄바꿈 (따로 생각해야되는 조건)
+        if(num % 10 === 0){ // 10의 배수
+            result += "<br>"; // 줄바꿈 태그 추가
+        }
+    }
+
+    // #result16에 출력(html을 해석)
+    document.getElementById("result16").innerHTML = result;
+    // document.getElementById("result16").innerText = result;
 }
