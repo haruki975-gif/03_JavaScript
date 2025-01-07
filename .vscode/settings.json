@@ -1,0 +1,8 @@
+{
+    "editor.trimAutoWhitespace": false,
+    "editor.tabSize": 4,
+    "editor.find.history": "workspace",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false
+}
