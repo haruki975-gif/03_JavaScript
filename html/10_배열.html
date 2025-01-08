@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10_배열</title>
+    <link rel="stylesheet" href="../css/10_배열.css">
 </head>
 <body>
     <h1>배열(Array)</h1>
@@ -71,6 +72,60 @@
     
     <button onclick="check4()">배열 X for문 확인 3</button>
     
+    <button onclick="check5()">배열 X for문 확인 4</button>
+    
+    <hr>
+    <h3>점심 메뉴 뽑기</h3>
+    <button onclick="selectMenu()">점심 메뉴 뽑기</button>
+    <h4>뽑힌 점심 메뉴 : <span id="menuResult"></span></h4>
+    
+    
+    <hr>
+    <h3>로또 번호 생성기</h3>
+    <pre>
+      - 1 ~ 45 번까지 존재
+      - 6개 뽑기
+      - 중복 X
+    </pre>
+    <button onclick="createLottoNumber()">로또 번호 생성</button>
+    
+    <div class="lotto-container" id="lotto">
+      <div>10</div>
+      <div>27</div>
+      <div>33</div>
+      <div>21</div>
+      <div>8</div>
+      <div>40</div>
+    </div>
+    
+    
+    <hr>
+    <h1>2차원 배열(n차원 배열)</h1>
+    <pre>
+      * 변수 : 메모리상에 값을 저장하는 공간(값 1개)
+      ex) const num1 = 10;
+          const num2 = 20;
+          const num3 = 30;
+      
+      * 1차원 배열 : 변수를 묶음으로 다루는 것(변수 n개)
+      ex) const arr1 = [10, 20, 30];
+          const arr2 = [40, 50, 60];
+          const arr3 = [70, 80, 90];
+      
+      * 2차원 배열 : 1차원 배열을 묶음으로 다루는 것(1차원 배열 n개)
+      ex) const arr = [
+                        [10, 20, 30],
+                        [40, 50, 60],
+                        [70, 80, 90]
+                      ];
+          arr[0][2] === 30
+          arr[2][1] === 80
+      
+      * 3차원 배열 : 2차원 배열을 묶음으로 다루는 것(2차원 배열 n개)
+    </pre>
+    <button onclick="check6()">2차원 배열 확인 1</button>
+    
+    <button onclick="check7()">2차원 배열 확인 2</button>
     
     
     
