@@ -1,6 +1,6 @@
 {
     "editor.trimAutoWhitespace": false,
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.find.history": "workspace",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
