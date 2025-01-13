@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>옵션적용하기</title>
+  <link rel="stylesheet" href="옵션적용하기.css">
+</head>
+<body>
+  <div class="container">
+    <table>
+      <tr class="input-num">
+        <th>너비 :</th>
+        <td><input type="number" min="1" max="1000" name="input-width"> px</td>
+        <th>높이 :</th>
+        <td><input type="number" min="1" max="1000" name="input-height"> px</td>
+      </tr>
+      <tr>
+        <th>글자크기 :</th>
+        <td class="input-num"><input type="number" min="1" max="100" id="font-size"> px</td>
+        <th>굵기 :</th>
+        <td>
+          <label>보통 <input type="radio" name="bold-btn" value="normal"></label>
+          <label>굵게 <input type="radio" name="bold-btn" value="bold"></label>
+        </td>
+      </tr>
+      <tr>
+        <th>글자색 :</th>
+        <td><input type="text" id="font-color"></td>
+        <th>배경색 :</th>
+        <td><input type="text" id="background-color"></td>
+      </tr>
+      <tr>
+        <th>가로정렬 :</th>
+        <td colspan="3">
+          <label>왼쪽 <input type="radio" name="row-btn" value="flex-start"></label>
+          <label>가운데 <input type="radio" name="row-btn" value="center"></label>
+          <label>오른쪽 <input type="radio" name="row-btn" value="flex-end"></label>
+        </td>
+      </tr>
+      <tr>
+        <th>세로정렬 :</th>
+        <td colspan="3">
+          <label>위 <input type="radio" name="col-btn" value="flex-start"></label>
+          <label>가운데 <input type="radio" name="col-btn" value="center"></label>
+          <label>아래 <input type="radio" name="col-btn" value="flex-end"></label>
+        </td>
+      </tr>
+      <tr>
+        <th>출력 문자열 :</th>
+        <td colspan="3"><input type="text" id="text-area"></td>
+      </tr>
+    </table>
+    
+    <!-- 적용하기 버튼 -->
+    <button id="btn1">적용하기</button>
+    
+    <!-- 내용 출력 영역 -->
+    <div id="result">test</div>
+    
+  </div>
+  
+  
+  
+  <script src="옵션적용하기.js"></script>
+</body>
+</html>
