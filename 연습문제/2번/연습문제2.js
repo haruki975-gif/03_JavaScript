@@ -3,6 +3,7 @@ const divs = document.querySelectorAll(".number"); // div 태그 안의 숫자
 const result = document.querySelector("#result"); // 결과창
 let cnt = 0; // 버튼 클릭 수
 
+// 향상된 for문(배열의 모든 요소에 대한 순차 접근 가능)
 for(let div of divs){
   div.addEventListener("click", () => {
     // div 안에 있는 숫자 콘솔에 찍어보기
@@ -17,6 +18,7 @@ for(let div of divs){
       return;
     }
     
+    // textContent == innerText
     result.append(div.innerHTML);
   });
 }
