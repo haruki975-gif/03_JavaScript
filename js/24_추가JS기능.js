@@ -83,6 +83,92 @@ btn2.addEventListener("click", ()=>{
   console.log("name : ", name);
   console.log("age : ", age);
   console.log("height : ", height);
-  
+});
 
+
+// ----------------------------------------------------------
+
+/** 배열 + ...전개 연산자 */
+const btn3 = document.querySelector("#btn3");
+btn3.addEventListener("click", ()=>{
+  
+  const arr = [10, 20, 30];
+  const copy1 = arr;
+  
+  
+  copy1[0] = 999; // 복사본의 0번 인덱스에 999 대입
+  
+  console.log("copy1[0] = 999");
+  console.log("arr : ", arr); // [999,20,30]
+  console.log("copy1 : ", copy1); // [999,20,30]
+  
+  // 왜 arr[0]이 999로 변했을까???
+  // -> 얕은 복사가 되었기 때문이다
+  
+  // * 얕은 복사(Shallow copy)
+  // - 같은 주소를 복사하여 저장한
+  //   여러 변수가 하나의 객체를 참조하는 것
+  
+  // ---------------------------------------------------
+  
+  // * 깊은 복사(Deep copy)
+  // - 객체의 모양, 저장된 값 그대로 복사 == 복제
+  
+  // ** 전개 연산자 사용!! **
+  const copy2 = [...arr]; // [999, 20, 30]
+  // -> arr이 참조하는 값을 얻어와 []새로운 배열로 생성
+  
+  copy2[1] = 1234;
+  console.log("copy[1]=1234");
+  console.log("arr : ", arr);       // [999, 20, 30]
+  console.log("copy2 : ", copy2);   // [999, 1234, 30]
+  
+  // ---------------------------------------------------
+  
+  /* 배열 결합 확인 */
+  const students1 = ["박무현", "신해량", "서지혁"];
+  const students2 = ["백애영", "이지현", "김재희"];
+  
+  const students3 = [...students1, ...students2]; // 2차원 배열
+  // const students3 = ["박무현", "신해량", "서지혁", "백애영", "이지현", "김재희"];
+  
+  console.log("students3 : ", students3);
+  
+  // ---------------------------------------------------
+  
+  /* 배열 요소 추가 */
+  const students4 = [...students3, "하이윤", "슈란"];
+  console.log("students4 : ", students4);
+});
+
+// ---------------------------------------------------
+
+/* 객체 + ... 연산자 */
+const btn4 = document.querySelector("#btn4");
+btn4.addEventListener("click",()=>{
+  
+  /* 객체 복사 */
+  const obj = {id : "user01", pw : "pass01"};
+  const copy1 = obj;      // 얕은 복사 (copy1은 obj와 같은 객체 참조)
+  const copy2 = {...obj}  // 깊은 복사 (copy2는 obj 복제본 참조)
+  
+  copy1.pw = "1q2w3e4r";
+  console.log("obj : ", obj);
+  console.log("copy1 : ", copy1);
+  console.log("copy2 : ", copy2);
+  
+  
+  /* 객체 병합 */
+  const obj2 = {id : "user02", pw : "pass02"};
+  const obj3 = {email : "user02@gmail.com", phone : "01012345678"};
+  const obj4 = {...obj2, ...obj3};
+  
+  console.log("obj4 : ", obj4);
+  
+  
+  /* 속성 덮어쓰기 */
+  const obj5 = {...obj4, phone:"01055559999"};
+  console.log("obj5 : ", obj5);
+  
+  
 });
