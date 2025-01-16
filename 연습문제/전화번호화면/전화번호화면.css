@@ -1,0 +1,141 @@
+main{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+/* 입력한 전화번호 실시간 출력 */
+.in-number{
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  word-break: break-all; /* 자동 줄바꿈 */
+}
+
+/* 왼쪽 영역 */
+.left{
+  width: 180px;
+  padding: 0 30px;
+  border-right: 1px solid rgb(201, 201, 201);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* 오른쪽 영역 */
+.right{
+  width: 100px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+/* 추가, 초기화 버튼 */
+.btn{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+
+/* 추가 버튼 */
+.add{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid rgb(100, 156, 179);
+  border-radius: 10px; /* 모서리 둥글기 */
+  color: rgb(100, 156, 179);
+}
+.add:hover{
+  color: white;
+  background-color: rgb(100, 156, 179);
+}
+.add:active{
+  background-color: rgb(28, 64, 78);
+}
+
+/* 초기화 버튼 */
+.reset{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid rgb(65, 131, 65);
+  border-radius: 10px; /* 모서리 둥글기 */
+  color: rgb(65, 131, 65);
+}
+.reset:hover{
+  color: white;
+  background-color: rgb(65, 131, 65);
+}
+.reset:active{
+  background-color: rgb(9, 34, 9);
+}
+
+/* 전화번호 목록 */
+.phone-number{
+  margin: 3px 0;
+}
+
+/* 별모양 */
+.star{
+  cursor: pointer;    /* 커서 손가락 */
+  user-select: none; /* 블럭 막기 */
+}
+.star:active{
+  font-weight: bold;
+}
+/* x모양 */
+.remove{
+  cursor: pointer;    /* 커서 손가락 */
+  user-select: none; /* 블럭 막기 */
+}
+
+/* 번호 클릭 */
+.number{
+  width: 60px;
+  height: 60px;
+  border: 0px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;    /* 커서 손가락 */
+  user-select: none; /* 블럭 막기 */
+}
+.number:hover {background-color: rgb(209, 223, 228);}
+.number:active {
+  background-color: rgb(89, 104, 109);
+  scale: 0.88;
+}

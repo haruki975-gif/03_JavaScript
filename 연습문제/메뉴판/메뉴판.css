@@ -1,0 +1,94 @@
+*{
+  box-sizing: border-box;
+}
+
+main{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 식당명 */
+.rest-head{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  margin: 40px 0 10px 0;
+  font-weight: bold;
+}
+
+/* 식당명 입력 */
+#r-name{
+  border: none;
+  width: 90%;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 메뉴 전체 영역 */
+.rdiv{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; /* 메뉴가 5개씩 3줄로 들어가게 */
+  align-content: flex-start; /* 왼쪽으로 붙이기 */
+  
+  width: 950px;
+  height: 300px;
+  padding: 30px 20px 0;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/* 메뉴 입력 */
+.rest-content{
+  display: flex;
+  flex-direction: row;
+  
+  /* border: 1px solid red; */
+  width: 35%;
+  height: 20%;
+  
+  /* 좌측 상단 정렬 */
+  align-items: flex-start;
+}
+
+/* 메뉴 input */
+.name, .price{
+  margin-left: 5px;
+  font-size: 20px;
+  height: 25px;
+}
+
+/* 음식명 */
+.name{
+  width: 150px;
+}
+/* 음식값 */
+.price{
+  width: 90px;
+}
+
+/* 버튼 영역 */
+.rest-foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* 수정/추가/삭제/종료 버튼 */
+.mod, .add, .del, .comp{
+  width: 100px;
+  margin: 10px 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px; /* 모서리 둥글기 */
+  cursor: pointer;
+  user-select: none;
+}
