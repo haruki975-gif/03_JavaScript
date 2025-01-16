@@ -23,58 +23,14 @@ title.addEventListener("focusout", ()=>{
 });
 
 
-/* 메뉴 추가하기 */
+const mod = document.querySelector(".mod"); // 수정 버튼
+const comp = document.querySelector(".comp"); // 종료 버튼
+const hideDiv = document.querySelector(".hideDiv"); // 숨기는 버튼 그룹
+
 const rdiv = document.querySelector(".rdiv"); // 메뉴판 전체 div
 const add = document.querySelector(".add"); // 추가 버튼
 
-add.addEventListener("click", ()=>{
-  
-  // 추가 개수 제한(15개)
-  const rcon = document.querySelectorAll(".rest-content");
-  
-  const div = document.createElement("div"); // .rest-content
-  div.className = "rest-content";
-  
-  const chk = document.createElement("input"); // 체크박스
-  chk.className = "check";
-  chk.type = "checkbox";
-
-  const menu = document.createElement("input"); // 메뉴명
-  menu.className = "name";
-  menu.type = "text";
-  menu.placeholder = "메뉴명";
-  
-  const price = document.createElement("input"); // 가격
-  price.className = "price";
-  price.type = "text";
-  price.placeholder = "가격";
-  
-  // 최대 15개 제한 (count보다는 length)
-  if(rcon.length >= 15){
-    alert("더 이상 메뉴를 추가할 수 없습니다.");
-    return;
-  }
-  
-  // div 조립
-  div.append(chk, menu, price);
-  rdiv.append(div);
-});
-
-
-/* 체크된 메뉴 삭제하기 */
 const del = document.querySelector(".del"); // 삭제 버튼
-
-del.addEventListener("click", ()=>{
-  const menus = document.querySelectorAll(".check:checked"); // 체크된 메뉴만 삭제
-  
-  for(let menu of menus){
-    menu.parentElement.remove();
-  }
-});
-
-
-const mod = document.querySelector(".mod"); // 수정 버튼
-const comp = document.querySelector(".comp"); // 종료 버튼
 
 /* 
   수정 클릭
@@ -84,10 +40,10 @@ const comp = document.querySelector(".comp"); // 종료 버튼
 */
 mod.addEventListener("click", ()=>{
   
-  mod.style.display = "none";
-  add.style.display = "";
-  del.style.display = "";
-  comp.style.display = "";
+  if(hideDiv.classList.contains("hidden")){
+    hideDiv.classList.remove("hidden");
+    mod.classList.add("hidden");
+  }
   
   // 메뉴명 생성
   const divs = document.querySelectorAll(".rest-content div:nth-child(2)");
@@ -130,6 +86,7 @@ mod.addEventListener("click", ()=>{
     
     chk.append(input);
   }
+
 });
 
 
@@ -141,10 +98,10 @@ mod.addEventListener("click", ()=>{
 */
 comp.addEventListener("click", ()=>{
   
-  mod.style.display = "";
-  add.style.display = "none";
-  del.style.display = "none";
-  comp.style.display = "none";
+  if(!hideDiv.classList.contains("hidden")){
+    hideDiv.classList.add("hidden");
+    mod.classList.remove("hidden");
+  }
   
   // 메뉴명 제거
   const inputs = document.querySelectorAll(".rest-content input:nth-child(2)");
@@ -180,5 +137,49 @@ comp.addEventListener("click", ()=>{
   const chks = document.querySelectorAll(".check");
   for(let chk of chks){
     chk.remove();
+  }
+});
+
+/* 메뉴 추가하기 */
+add.addEventListener("click", ()=>{
+  
+  // 추가 개수 제한(15개)
+  const rcon = document.querySelectorAll(".rest-content");
+  
+  const div = document.createElement("div"); // .rest-content
+  div.className = "rest-content";
+  
+  const chk = document.createElement("input"); // 체크박스
+  chk.className = "check";
+  chk.type = "checkbox";
+
+  const menu = document.createElement("input"); // 메뉴명
+  menu.className = "name";
+  menu.type = "text";
+  menu.placeholder = "메뉴명";
+  
+  const price = document.createElement("input"); // 가격
+  price.className = "price";
+  price.type = "text";
+  price.placeholder = "가격";
+  
+  // 최대 15개 제한 (count보다는 length)
+  if(rcon.length >= 15){
+    alert("더 이상 메뉴를 추가할 수 없습니다.");
+    return;
+  }
+  
+  // div 조립
+  div.append(chk, menu, price);
+  rdiv.append(div);
+});
+
+
+/* 체크된 메뉴 삭제하기 */
+del.addEventListener("click", ()=>{
+  const menus = document.querySelectorAll(".check:checked"); // 체크된 메뉴만 삭제
+  
+  for(let menu of menus){
+    menu.parentElement.remove();
   }
 });

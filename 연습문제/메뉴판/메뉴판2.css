@@ -37,7 +37,7 @@ main{
   
   width: 950px;
   height: 300px;
-  padding: 30px 20px 0;
+  padding: 15px 20px 15px;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
 }
@@ -52,7 +52,7 @@ main{
   height: 20%;
   
   /* 좌측 상단 정렬 */
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* 메뉴 input */
@@ -72,14 +72,16 @@ main{
 }
 
 /* 버튼 영역 */
-.rest-foot{
+.rest-foot{ /* 버튼 전체 */
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-/* hidden 클래스를 가진 요소를 화면에 표시 X */
-.hidden{ display: none; }
+.hideDiv{ /* 추가/삭제/종료 버튼만 */
+  display: flex;
+}
 
 /* 수정/추가/삭제/종료 버튼 */
 .mod, .add, .del, .comp{
@@ -95,3 +97,6 @@ main{
   cursor: pointer;
   user-select: none;
 }
+
+/* hidden 클래스를 가진 요소를 화면에 표시 X */
+.hidden{ display: none; }
